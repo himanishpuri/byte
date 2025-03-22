@@ -1,5 +1,335 @@
+:root {
+    --bg-image-1: url('/assets/image1.avif');
+    --bg-image-2: url('/assets/image2.avif');
+    --bg-image-3: url('/assets/image3.avif');
+    --bg-image-4: url('/assets/image4.avif');
+    --bg-image-5: url('/assets/image5.avif');
+    --bg-image-6: url('/assets/image6.avif');
+    --bg-image-7: url('/assets/image7.avif');
+    --bg-color: yellow;
+}
+
+
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1.25rem;
 }
+
+/* Prevents body from scrolling */
+body {
+    overflow-y: hidden;
+    height: 100vh;
+    position: relative;
+    background-color: white;
+    /* Default background */
+    transition: background-color 0.3s ease;
+}
+
+/* Change background color when hovering over any .outer-container */
+/* body:hover {
+    background-color: yellow;
+} */
+
+
+
+.outer-container:nth-child(1):hover {
+    background-color: gray;
+}
+
+.outer-container:nth-child(2):hover {
+    --bg-color: green;
+}
+
+.outer-container:nth-child(3):hover {
+    --bg-color: pink;
+}
+
+.outer-container:nth-child(4):hover {
+    --bg-color: darkgray;
+}
+
+.outer-container:nth-child(5):hover {
+    --bg-color: yellow;
+}
+
+.outer-container:nth-child(6):hover {
+    --bg-color: red;
+}
+
+/* Fixed Navbar with horizontal alignment */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    height: 4rem;
+}
+
+/* Position navbar items with specific spacing */
+.navbar-item {
+    position: absolute;
+}
+
+.pam {
+    left: 2rem;
+}
+
+.work {
+    left: 2rem;
+    top: 3rem;
+}
+
+.info {
+    left: 40%;
+}
+
+.projects {
+    left: 45%;
+}
+
+.bsa {
+    right: 9rem;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    position: sticky;
+    top: -6rem;
+    z-index: 100;
+    background-color: white;
+}
+
+/* Grid Items */
+.grid-item {
+    padding: 1rem;
+    height: 100%;
+    background-color: white;
+}
+
+.empty {
+    /* First column empty but retains size */
+}
+
+.rossi {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.lorem-text {
+    padding: 1rem;
+    padding-left: 4rem;
+    font-size: 1rem;
+    align-self: center;
+    justify-self: end;
+}
+
+.hyperlink {
+    color: blueviolet;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Main content area below grid */
+.main-content {
+    display: flex;
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    height: 100dvh;
+}
+
+/* Left fixed scrollable container */
+.left-container {
+    width: 10%;
+    height: 100%;
+    position: relative;
+    z-index: 1000;
+    border-right: 1px solid #eee;
+}
+
+.left-scrollable {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 2rem;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 25rem;
+    position: sticky;
+    top: 5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.left-scrollable::-webkit-scrollbar {
+    display: none;
+}
+
+/* Right scrollable container */
+.right-container {
+    width: 90%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.right-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Containers inside right scrollable section */
+.scrollable-container-wrapper {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+
+/* Outer Container */
+.outer-container {
+    width: 65%;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.one {
+    background-image: var(--bg-image-1);
+}
+
+.two {
+    background-image: var(--bg-image-2);
+}
+
+.three {
+    background-image: var(--bg-image-3);
+}
+
+.four {
+    background-image: var(--bg-image-4);
+}
+
+.five {
+    background-image: var(--bg-image-5);
+}
+
+.six {
+    background-image: var(--bg-image-6);
+}
+
+.outer-container:nth-child(1):hover~body {
+    background-color: gray;
+}
+
+.outer-container:nth-child(2):hover~body {
+    background-color: green;
+}
+
+.outer-container:nth-child(3):hover~body {
+    background-color: pink;
+}
+
+.outer-container:nth-child(4):hover~body {
+    background-color: darkgray;
+}
+
+.outer-container:nth-child(5):hover~body {
+    background-color: yellow;
+}
+
+.outer-container:nth-child(6):hover~body {
+    background-color: red;
+}
+
+/* Inner Container */
+.inner-container {
+    width: 50%;
+    aspect-ratio: 16/9;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.outer-container:hover .inner-container {
+    opacity: 1;
+}
+
+/* Text Between Outer Containers */
+.content-text {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem auto;
+    width: 80%;
+}
+
+.outer-container video {
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0;
+    background-color: white;
+    animation-play-state: paused;
+    z-index: 0;
+}
+
+.outer-container:hover video {
+    animation-play-state: running;
+    opacity: 1;
+}
+
+/* These styles ensure the video element itself is playable with CSS */
+@keyframes videoPlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 
+.bottom-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -290px;
+    z-index: 100;
+    height: 10px;
+    background-image: url(--bg-image-7);
+    /* border-top: 1px solid #ccc; 
+
+}
+*/
+
+/*
+.bottom-container p {
+    font-size: 1rem;
+    color: #333;
+} */
