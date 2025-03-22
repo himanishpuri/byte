@@ -35,6 +35,10 @@ body:hover {
 }
 
 
+.outer-container:hover ~ body {
+    background-color: var(--bg-color);
+}
+
 
 .outer-container:nth-child(1):hover {
     background-color: gray;
@@ -108,14 +112,16 @@ body:hover {
     position: sticky;
     top: -6rem;
     z-index: 100;
-    background-color: darkcyan;
+
+    &:hover {
+        background-color: darkcyan;
+    }
 }
 
 /* Grid Items */
 .grid-item {
     padding: 1rem;
     height: 100%;
-    background-color: transparent;
 }
 
 .empty {
